@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>管理仓库</title>
+  <basefont face="微软雅黑" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="YXBJ Windows/601433 (zh-CN, DDL); Windows/10.0.0 (Win64); EDAMVersion=V2;"/>
+  <meta name="content-class" content="yinxiang.markdown"/>
+  <style>
+    body, td {
+      font-family: 微软雅黑;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="540"/>
+<h1>管理仓库</h1>
+
+<div><span><div style="font-size: 14px; margin: 0; padding: 0; width: 100%;"><h1 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 41px; border-bottom: 3px double #999; color: #000; margin-top: 14px;">管理仓库</h1>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">查看文件状态</h2>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">git status命令可以查看仓库中的文件状态<br/>
+有三种状态<br/>
+修改后文件未提交，文件名为红色<br/>
+文件提交至暂存区，文件名为绿色<br/>
+文件提交至分支，提示没有需要提交的文件<br/>
+使用-s参数能赢缩写的形式显示</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">比较文件</h2>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">git diff -- &lt;文件名&gt;<br/>
+这个命令可以查看指定工作区（未提交至暂存区）文件和版本库文件的不同</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">撤销修改</h2>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">git checkout -- &lt;文件名&gt; 让指定文件回到之前的状态<br/>
+如果文件修改后没有提交至暂存区则恢复到和版本库一致的状态<br/>
+如果已经提交至暂存区，但没有提交到版本库则恢复到和暂存区的状态</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">退回上个版本</h2>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">git reset --head HEAD^        可以回到上个版本
+HEAD  表示当前版本
+HEAD^ 表示上个版本
+</code></pre>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">回到指定版本</h2>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">查找版本id</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">git log            查看历史版本信息，里面有版本id
+参数
+--pretty=oneline        可以每个版本只显示一行
+
+git reflog             可以查看之前使用过的命令和使用命令时的版本id
+</code></pre>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">跳到指定版本</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">git reset --head &lt;版本id&gt;
+</code></pre>
+</div><center style="display:none !important;visibility:collapse !important;height:0 !important;white-space:nowrap;width:100%;overflow:hidden">%23%20%E7%AE%A1%E7%90%86%E4%BB%93%E5%BA%93%0A%0A%23%23%20%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%0A%0A%20git%20status%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E6%9F%A5%E7%9C%8B%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%0A%20%20%20%20%E6%9C%89%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81%0A%20%20%20%20%20%20%20%20%E4%BF%AE%E6%94%B9%E5%90%8E%E6%96%87%E4%BB%B6%E6%9C%AA%E6%8F%90%E4%BA%A4%EF%BC%8C%E6%96%87%E4%BB%B6%E5%90%8D%E4%B8%BA%E7%BA%A2%E8%89%B2%0A%20%20%20%20%20%20%20%20%E6%96%87%E4%BB%B6%E6%8F%90%E4%BA%A4%E8%87%B3%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%8C%E6%96%87%E4%BB%B6%E5%90%8D%E4%B8%BA%E7%BB%BF%E8%89%B2%0A%20%20%20%20%20%20%20%20%E6%96%87%E4%BB%B6%E6%8F%90%E4%BA%A4%E8%87%B3%E5%88%86%E6%94%AF%EF%BC%8C%E6%8F%90%E7%A4%BA%E6%B2%A1%E6%9C%89%E9%9C%80%E8%A6%81%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6%20%0A%20%20%20%20%E4%BD%BF%E7%94%A8-s%E5%8F%82%E6%95%B0%E8%83%BD%E8%B5%A2%E7%BC%A9%E5%86%99%E7%9A%84%E5%BD%A2%E5%BC%8F%E6%98%BE%E7%A4%BA%0A%20%20%20%20%0A%20%23%23%20%E6%AF%94%E8%BE%83%E6%96%87%E4%BB%B6%0A%20%20%20%20git%20diff%20--%20%3C%E6%96%87%E4%BB%B6%E5%90%8D%3E%20%0A%20%20%20%20%E8%BF%99%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E5%B7%A5%E4%BD%9C%E5%8C%BA%EF%BC%88%E6%9C%AA%E6%8F%90%E4%BA%A4%E8%87%B3%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%89%E6%96%87%E4%BB%B6%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8D%E5%90%8C%0A%20%20%20%20%0A%23%23%20%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%0A%20%20%20%20git%20checkout%20--%20%3C%E6%96%87%E4%BB%B6%E5%90%8D%3E%20%E8%AE%A9%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%9B%9E%E5%88%B0%E4%B9%8B%E5%89%8D%E7%9A%84%E7%8A%B6%E6%80%81%0A%20%20%20%20%E5%A6%82%E6%9E%9C%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%90%8E%E6%B2%A1%E6%9C%89%E6%8F%90%E4%BA%A4%E8%87%B3%E6%9A%82%E5%AD%98%E5%8C%BA%E5%88%99%E6%81%A2%E5%A4%8D%E5%88%B0%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%80%E8%87%B4%E7%9A%84%E7%8A%B6%E6%80%81%0A%20%20%20%20%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E6%8F%90%E4%BA%A4%E8%87%B3%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%8C%E4%BD%86%E6%B2%A1%E6%9C%89%E6%8F%90%E4%BA%A4%E5%88%B0%E7%89%88%E6%9C%AC%E5%BA%93%E5%88%99%E6%81%A2%E5%A4%8D%E5%88%B0%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E7%8A%B6%E6%80%81%0A%0A%23%23%20%E9%80%80%E5%9B%9E%E4%B8%8A%E4%B8%AA%E7%89%88%E6%9C%AC%0A%20%20%20%20git%20reset%20--head%20HEAD%5E%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%88%B0%E4%B8%8A%E4%B8%AA%E7%89%88%E6%9C%AC%0A%20%20%20%20HEAD%20%20%E8%A1%A8%E7%A4%BA%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC%0A%20%20%20%20HEAD%5E%20%E8%A1%A8%E7%A4%BA%E4%B8%8A%E4%B8%AA%E7%89%88%E6%9C%AC%0A%0A%23%23%20%E5%9B%9E%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%20%0A%23%23%23%20%E6%9F%A5%E6%89%BE%E7%89%88%E6%9C%ACid%0A%20%20%20%20git%20log%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF%EF%BC%8C%E9%87%8C%E9%9D%A2%E6%9C%89%E7%89%88%E6%9C%ACid%0A%20%20%20%20%E5%8F%82%E6%95%B0%0A%20%20%20%20--pretty%3Doneline%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%E5%8F%AF%E4%BB%A5%E6%AF%8F%E4%B8%AA%E7%89%88%E6%9C%AC%E5%8F%AA%E6%98%BE%E7%A4%BA%E4%B8%80%E8%A1%8C%0A%20%20%20%20%0A%20%20%20%20git%20reflog%20%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%E5%8F%AF%E4%BB%A5%E6%9F%A5%E7%9C%8B%E4%B9%8B%E5%89%8D%E4%BD%BF%E7%94%A8%E8%BF%87%E7%9A%84%E5%91%BD%E4%BB%A4%E5%92%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%97%B6%E7%9A%84%E7%89%88%E6%9C%ACid%0A%0A%23%23%23%20%E8%B7%B3%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%0A%20%20%20%20git%20reset%20--head%20%3C%E7%89%88%E6%9C%ACid%3E%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%0A%0A%0A%20%20%20%20%0A%0A%20%20%20%20%0A%0A%20%20%20%20%0A%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20</center></span>
+</div></body></html> 
